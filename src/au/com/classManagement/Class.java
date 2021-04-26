@@ -1,6 +1,6 @@
 package au.com.classManagement;
 
-public class Class {
+public class Class implements Comparable<Class>{
 
 	private String title;
 	private int time;
@@ -16,5 +16,13 @@ public class Class {
 	public int getTime() {
 		return time;
 	}
-	
+	@Override
+	public String toString() {
+		return "Class: " + title + " Time: " + time;
+		
+	}
+	@Override
+	public int compareTo(Class o) {
+		return this.title.compareTo(o.title);
+	}
 }
