@@ -19,7 +19,6 @@ public class Testing3 {
 	Collections.sort(videos);
 	
 	System.out.println(videos);
-	System.out.println(javaCollections.getTotalTime());
 	System.out.println(javaCollections.getTotalTimeMap());
 	System.out.println(javaCollections);
 }

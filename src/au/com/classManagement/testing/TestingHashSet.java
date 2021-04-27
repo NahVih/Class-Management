@@ -1,17 +1,22 @@
 package au.com.classManagement.testing;
 
-import java.util.List;
+import java.util.Collection;
+import java.util.HashSet;
 
 import au.com.classManagement.Course;
 import au.com.classManagement.Video;
 
-public class Testing {
+public class TestingHashSet {
 	public static void main(String[] args) {
 	Course javaCollections = new Course ("Java Collections", "Vittor");
 	
-	List<Video> videos = javaCollections.getAulas();	
 	javaCollections.addition(new Video("Working with Arraylist", 21));
+	javaCollections.addition(new Video("Creating with Arraylist", 32));
+	javaCollections.addition(new Video("Working with Collections", 15));
+	
+	Collection<Video> videos = new HashSet<>(javaCollections.getAulas());
 	
 	System.out.println(videos);
+
 }
 }
