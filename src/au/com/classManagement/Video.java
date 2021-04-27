@@ -1,12 +1,12 @@
 package au.com.classManagement;
 
-public class Class implements Comparable<Class>{
+public class Video implements Comparable<Video>{
 
 	private String title;
 	private int time;
 	
 	
-	public Class(String string, int i) {
+	public Video(String string, int i) {
 		this.title = string;
 		this.time = i;
 	}
@@ -18,11 +18,13 @@ public class Class implements Comparable<Class>{
 	}
 	@Override
 	public String toString() {
-		return "Class: " + title + " Time: " + time;
+		return "Video: " + title + " Time: " + time +".\n";
 		
 	}
 	@Override
-	public int compareTo(Class o) {
+	public int compareTo(Video o) {
 		return this.title.compareTo(o.title);
 	}
+	
+
 }
