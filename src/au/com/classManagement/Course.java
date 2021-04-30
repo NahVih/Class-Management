@@ -8,19 +8,18 @@ import java.util.Set;
 
 public class Course {
 
-	private String name;
+	private String courseName;
 	private String instructor;
 	private List<Video> courseVideos = new LinkedList<Video>();
 	private Set<Student> students = new HashSet<Student>();
 	
 	public Course(String name, String instructor) {
-		super();
-		this.name = name;
+		this.courseName = name;
 		this.instructor = instructor;
 	}
 	
 	public String getName() {
-		return name;
+		return courseName;
 	}
 
 	public String getInstructor() {
@@ -60,6 +59,13 @@ public class Course {
 	
 	@Override
 	public String toString() {
-		return "Course: " + name + ", Total Time: " + this.getTotalTimeMap() + "." + "Videos:\n" + this.courseVideos;
+		return "Course: " + courseName + ", Total Time: " + this.getTotalTimeMap() + "." + "Videos:\n" + this.courseVideos;
 	}
+	
+	public boolean containtsStudent(Student string) {
+		return this.students.contains(string);
+	}
+
+
+
 }

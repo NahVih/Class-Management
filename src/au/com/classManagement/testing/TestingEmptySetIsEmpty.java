@@ -1,10 +1,13 @@
 package au.com.classManagement.testing;
 
+import java.util.Collections;
+import java.util.Set;
+
 import au.com.classManagement.Course;
 import au.com.classManagement.Student;
 import au.com.classManagement.Video;
 
-public class TestingEmptySet {
+public class TestingEmptySetIsEmpty {
 	public static void main(String[] args) {
 	Course javaCollections = new Course ("Java Collections", "Vittor");
 	
@@ -31,8 +34,14 @@ public class TestingEmptySet {
 		System.out.println(a);
 	});
 	
-	System.out.println(javaCollections.containtsStudent(a1));
-	System.out.println(a1.getStudentName());
+	javaCollections.deleteStudents();
+	System.out.println("Remain Students");
+	
+	if (javaCollections.getStudents().isEmpty()) {
+		System.out.println("No Students");
+	}
+	
+
 	
 	
 }

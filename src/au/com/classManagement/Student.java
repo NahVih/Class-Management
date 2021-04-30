@@ -1,17 +1,18 @@
 package au.com.classManagement;
 
+
 public class Student {
 
-		private String name;
+		private String studentName;
 		private int tfn;
 		
 		public Student (String name, int tfn) {
-			this.name = name;
+			this.studentName = name;
 			this.tfn = tfn;
 	}
 
-		public String getName() {
-			return name;
+		public String getStudentName() {
+			return studentName;
 		}
 
 
@@ -21,8 +22,10 @@ public class Student {
 		
 		@Override
 		public String toString() {
-			return "Aluno: " + name + " TFN: " + tfn +".\n";
+			return "Student: " + studentName + " TFN: " + tfn +".\n";
 			
 		}
+
+		
 
 }
