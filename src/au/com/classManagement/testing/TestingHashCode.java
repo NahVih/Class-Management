@@ -4,7 +4,7 @@ import au.com.classManagement.Course;
 import au.com.classManagement.Student;
 import au.com.classManagement.Video;
 
-public class TestingEmptySet {
+public class TestingHashCode {
 	public static void main(String[] args) {
 	Course javaCollections = new Course ("Java Collections", "Vittor");
 	
@@ -27,13 +27,19 @@ public class TestingEmptySet {
 	
 	System.out.println(javaCollections.getStudents());
 	
-	javaCollections.getStudents().forEach(a -> {
-		System.out.println(a);
-	});
+//	javaCollections.getStudents().forEach(a -> {
+//		System.out.println(a);
+//	});
 	
 	System.out.println(javaCollections.containtsStudent(a1));
 	System.out.println(a1.getStudentName());
 	
+	Student Vittor = new Student("Vittor", 124585);
+	System.out.println("Vittor is a Student?" + a1.equals(Vittor));
 	
+	System.out.println(Vittor.hashCode());
+	System.out.println(a1.hashCode());
+	
+
 }
 }
