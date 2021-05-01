@@ -1,17 +1,24 @@
 package au.com.classManagement;
 
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Course {
 
 	private String courseName;
 	private String instructor;
 	private List<Video> courseVideos = new LinkedList<Video>();
-	private Set<Student> students = new HashSet<Student>();
+
+	private Set<Student> students = new TreeSet<Student>((Student student, Student otherStudent) -> student.getTfn() - otherStudent.getTfn());
+	
+////private Set<Student> students = new TreeSet<Student>(new Comparator<Student>() {
+////public int compare(Student student, Student otherStudent) {
+////return student.getTfn() - otherStudent.getTfn();
+////}
+//});
 	
 	public Course(String name, String instructor) {
 		this.courseName = name;
