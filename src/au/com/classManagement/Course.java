@@ -1,8 +1,11 @@
 package au.com.classManagement;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -11,8 +14,8 @@ public class Course {
 	private String courseName;
 	private String instructor;
 	private List<Video> courseVideos = new LinkedList<Video>();
-
 	private Set<Student> students = new TreeSet<Student>((Student student, Student otherStudent) -> student.getTfn() - otherStudent.getTfn());
+	private Map<Integer, Student> tfnStudent = new HashMap<>();
 	
 ////private Set<Student> students = new TreeSet<Student>(new Comparator<Student>() {
 ////public int compare(Student student, Student otherStudent) {
@@ -46,6 +49,7 @@ public class Course {
 	
 	public void additionStudents (Student student) {
 		this.students.add(student);
+		this.tfnStudent.put(student.getTfn(), student);
 	}
 	
 	public void deleteStudents () {
@@ -71,6 +75,12 @@ public class Course {
 	
 	public boolean containtsStudent(Student string) {
 		return this.students.contains(string);
+	}
+
+	public Student findStudentTfn(int i) {
+		if(!tfnStudent.containsKey(i))
+			throw new NoSuchElementException("Student not found!");
+		return tfnStudent.get(i);
 	}
 
 
