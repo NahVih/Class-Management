@@ -40,7 +40,7 @@ public class Course {
 		return courseVideos;
 	}
 	public List<Student> getStudents(){
-		return students;
+		return Collections.unmodifiableList(students);
 	}
 	
 	public void addition (Video video) {
